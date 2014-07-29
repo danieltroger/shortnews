@@ -12,7 +12,7 @@
   {
     var a=1;
     local_sources.forEach(function (source) {
-      if(!file_exists(source)){ a=0; };
+      if(!file_exists(source)){ a=0; return a };
       });
       return a;
   }
