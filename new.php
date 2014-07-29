@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script> // check for local copies of jquery, otherwise use the CDN hosted version. Make the form draggable and resizeable.
-  /* Minimized version of https://raw.githubusercontent.com/kvz/phpjs/master/experimental/filesystem/file_exists.js */file_exists(a){var b=this.window.ActiveXObject?new ActiveXObject("Microsoft.XMLHTTP"):new XMLHttpRequest();if(!b){throw new Error("XMLHttpRequest not supported")}b.open("HEAD",a,false);b.send(null);if(b.status==200){return true}return false};
+  <script type="text/javascript"> // check for local copies of jquery, otherwise use the CDN hosted version. Make the form draggable and resizeable.
+  /* Minimized version of https://raw.githubusercontent.com/kvz/phpjs/master/experimental/filesystem/file_exists.js */function file_exists(a){var b=this.window.ActiveXObject?new ActiveXObject("Microsoft.XMLHTTP"):new XMLHttpRequest();if(!b){throw new Error("XMLHttpRequest not supported")}b.open("HEAD",a,false);b.send(null);if(b.status==200){return true}return false};
   var local_sources = Array("/jquery.min.js","/jquery-ui-1.10.3/themes/base/jquery-ui.css","/jquery-ui-1.10.3/ui/minified/jquery-ui.min.js","jqtp.js"),
   cdn_sources = Array("http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css","http://code.jquery.com/jquery.min.js","http://code.jquery.com/ui/1.10.3/jquery-ui.min.js","https://raw.github.com/furf/jquery-ui-touch-punch/master/jquery.ui.touch-punch.min.js"),
   use=cdn_sources;
