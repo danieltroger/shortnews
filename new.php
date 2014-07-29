@@ -11,14 +11,14 @@
   function use_local()
   {
     var a=1;
-    local_sources.forEach(function (source) {
-      if(!file_exists(source)){ a=0; return a };
-      });
+    local_sources.forEach(function (source) {if(a){ // don't do more requests if one url is missing.
+      if(!file_exists(source)){ a=0; };
+      }});
       return a;
   }
   function ext(filename)
   {
-    var a=filename.split("."),b=a.length,c=b-1,d=a[c];
+    var a=filename.split("."),b=a.length,c=b-1,d=a[c]; // gets the last thing after the last .
     return d;
   }
   function load(sources)
@@ -32,7 +32,7 @@
           head=document.getElementsByTagName("head")[0];
           head.appendChild(link);
         }
-        else if(ext(source) == "js")
+        else if(ext(source) == "js") // I could even download and eval() it but then it wouldn't work with CDN
         {
           var script=document.createElement("script");
           script.src=source;
@@ -42,11 +42,11 @@
         }
         else
         {
-          throw new Error("Unknow extension: "+ext(source));
+          throw new Error("Unknow extension: "+ext(source)); // lels never tried this line
         }
     });
   }
-  window.onload=function ()
+  window.onload=function () // fuck jQuery but it's so simple...
   {
     $("form").resizable({ handles: 'e' });
     $("form").draggable();
