@@ -61,6 +61,8 @@
     width:100%;
     min-height: 20px;
     position:relative;
+    -webkit-appearance: caret;
+    -moz-appearance: caret; 
   }
   form
   {
@@ -68,7 +70,7 @@
     min-width:300px;
     max-width:100%;
     width:35%;
-    padding:1%;
+    padding:2%;
   }
   .button
   {
@@ -83,7 +85,7 @@
   </style>
 </head>
 <body>
-  <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+  <form action="" method="post">
     <input type="email" required class="input horcent" placeholder="email" /><br />
     <input type="text" required class="input horcent" placeholder="nick" /><br />
     <textarea required class="input horcent" placeholder="The news"></textarea><br />
